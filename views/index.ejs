@@ -1,3 +1,4 @@
+
 <!-- views/index.ejs -->
 
 <!DOCTYPE html>
@@ -5,10 +6,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movies app</title>
+    <title>Home Page</title>
   </head>
   <body>
-    <h1>Welcome to the movies app</h1>
-    <p>An app for discovering golden movies.</p>
+    <!-- <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p> -->
+    <% if (user) { %>
+      <a href="/auth/sign-out">Sign out</a>
+      <h1>Welcome to the app, <%= user.username %>!</h1>
+      <p>
+        <a href="/Movies">70s Movies</a>
+      </p>
+      <p>
+        <a href="view/Movies/80sMovies">80s Movies Movies</a>
+      </p>
+      <p>
+        <a href="view/Movies/90sMovies">90s Movies</a>
+      </p>
+      <p>
+        <a href="view/Movies/2000sMovies">2000s Movies</a>
+      </p>
+      <% } else { %>
+      <h1>Welcome to the app, fellow Cinephile</h1>
+      
+      <p>
+        <a href="/auth/sign-up">Sign up</a> or <a href="/auth/sign-in">sign in</a>.
+      </p>
+      <% } %>
   </body>
 </html>
