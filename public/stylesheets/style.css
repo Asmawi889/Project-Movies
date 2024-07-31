@@ -1,0 +1,20 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 20px;
+    row-gap: 20px;
+  }
+  
+  .card {
+    height: 100px;
+    border: 1px solid red;
+    background: yellow;
+  }
+  
+  .content-display {
+    grid-column: 1/4;
+    /*grid-column: 2/4; - for the second card */
+    /*grid-column: 3/4; - for the third card */
+    height: 100px;
+    border: 1px solid green;
+  }

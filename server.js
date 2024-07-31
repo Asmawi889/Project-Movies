@@ -16,11 +16,15 @@ require('./config/database');
 // Controller imports
 const authCtrl = require('./controllers/auth');
 const movieCtrl = require('./controllers/movies');
-
+// const movie2Ctrl = require('./controllers/80smovies');
+// const movie3Ctrl = require('./controllers/90smovies');
+// const movie4Ctrl = require('./controllers/2000movies');
 const app = express();
 
 // Set the port from environment variable or default to 3000
 const port = process.env.PORT ? process.env.PORT : '3000';
+
+app.use(express.static(__dirname + '/public'));
 
 // MIDDLEWARE
 
@@ -44,7 +48,11 @@ app.use(
 app.use(passUserToView);
 // ROUTES
 app.use('/auth', authCtrl);
-app.use('/Movies', movieCtrl);
+app.use('/movies', movieCtrl);
+// app.use('/80smovies',movie2Ctrl );
+// app.use('/90smovies' , movie3Ctrl);
+// app.use('/2000smovies' , movie4Ctrl);
+
 
 // app.get('/vip-lounge', isSignedIn, (req, res, next) => {
 //   res.send(`Welcome to the party ${req.session.user.username}.`);

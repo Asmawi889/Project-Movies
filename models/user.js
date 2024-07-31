@@ -9,13 +9,13 @@ const userSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  Email : {
+  email : {
     type: String,
     required: false,
   },
-  FavList : [{
-    type: String,
-    required: false,
+  favList : [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Movie'
   }]
   
 });

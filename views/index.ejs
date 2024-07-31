@@ -12,19 +12,24 @@
     <!-- <p><a href="/vip-lounge">Get into the VIP Users Only lounge!</a></p> -->
     <% if (user) { %>
       <a href="/auth/sign-out">Sign out</a>
+      
       <h1>Welcome to the app, <%= user.username %>!</h1>
       <p>
-        <a href="/Movies">70s Movies</a>
+        <a href="/70smovies">70s Movies</a>
       </p>
       <p>
-        <a href="view/Movies/80sMovies">80s Movies Movies</a>
+        <a href="/80smovies">80s Movies Movies</a>
       </p>
       <p>
-        <a href="view/Movies/90sMovies">90s Movies</a>
+        <a href="/90smovies">90s Movies</a>
       </p>
       <p>
-        <a href="view/Movies/2000sMovies">2000s Movies</a>
+        <a href="/2000smovies">2000s Movies</a>
       </p>
+      <p>
+        <a href="">My Favorites List</a>
+      </p>
+
       <% } else { %>
       <h1>Welcome to the app, fellow Cinephile</h1>
       

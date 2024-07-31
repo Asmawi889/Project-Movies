@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>insert a new Movie</h1>
+  <form action="/movies/newMovies" method="POST">
+    <label for="title">Movie Title:</label>
+    <input type="text" name="title" id="title" required />
+
+    <label for="releaseDate">Release Date:</label>
+    <input type="date" name="releaseDate" id="releaseDate" required />
+
+    <label for="rating">Rating</label>
+    <input type="number" name="rating" id="rating" required />
+
+    <label for="description">Description</label>
+    <input type="text" name="description" id="Description" required />
+
+    <label for="Decade">Decade</label>
+    <input type="text" name="decade" id="Decade" required />
+
+    
+   
+    
+    <button type="submit">Post Movie</button>
+  </form>
+</body>
+</html>
