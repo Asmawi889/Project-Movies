@@ -18,7 +18,7 @@ const authCtrl = require('./controllers/auth');
 const movieCtrl = require('./controllers/movies');
 // const movie2Ctrl = require('./controllers/80smovies');
 // const movie3Ctrl = require('./controllers/90smovies');
-// const movie4Ctrl = require('./controllers/2000movies');
+const movie4Ctrl = require('./controllers/showingMovies');
 const app = express();
 
 // Set the port from environment variable or default to 3000
@@ -49,9 +49,10 @@ app.use(passUserToView);
 // ROUTES
 app.use('/auth', authCtrl);
 app.use('/movies', movieCtrl);
+
 // app.use('/80smovies',movie2Ctrl );
 // app.use('/90smovies' , movie3Ctrl);
-// app.use('/2000smovies' , movie4Ctrl);
+app.use('/showingMovies' , movie4Ctrl);
 
 
 // app.get('/vip-lounge', isSignedIn, (req, res, next) => {

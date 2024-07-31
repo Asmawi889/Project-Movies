@@ -7,34 +7,30 @@
     <title>70s Movies</title>
 </head>
 <body>
-    <p>
-        <a href="">ADDING New Movies</a>
-      </p>
-      <div class="container">
-        <div class="card">
-          <p>Card 1</p>
-        </div>
-        <div class="card">
-          <p>Card 2</p>
-        </div>
-        <div class="card">
-          <p>Card 3</p>
-        </div>
-        <div class="content-display"></div>
-        <div class="card">
-          <p>Card 4</p>
-        </div>
-        <div class="card">
-          <p>Card 5</p>
-        </div>
-        <div class="card">
-          <p>Card 6</p>
-        </div>
-        <div class="content-display"></div>
-        <div class="card">
-          <p>Card 7</p>
-        </div>
+  <ul>
+    <% allMovies.forEach((element)=> { %>
+     <li><%= element.title %></li> 
+     <li><%= element.releaseDate %></li>
+     <li><%= element.rating %></li>
+     <li><%= element.decade %></li>
+     <li><%= element.description %></li>
+
+     <% element.forEach(function(movie) { %>
+      <div class="movie">
+        <%= movie.text %><br>
+        <% if (user && movie.userId.equals(user._id)) { %>
+          <form action="/comments/<%= comment._id %>?_method=DELETE" method="POST">
+            <button type="submit">X</button>
+          </form>
+        <% } %>
       </div>
-    </div>
+    <% }) %>
+    
+    <% }); %>
+
+   
+    
+</ul>
+    
 </body>
 </html>

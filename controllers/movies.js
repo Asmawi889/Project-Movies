@@ -4,17 +4,11 @@ const bcrypt = require('bcrypt');
 
 
 const Movies= require('../models/movie');
-// query the database for all of the movies (and save as a variable --> allMovies)
 
-router.get('/', async (req, res) => {
-  const allMovies = await Movie.find({})
-  console.log(allMovies)
-    res.render('movies/70sMovies.ejs' )
-})
-// send allMovies to the view
+
      
-router.get('/new-movie', (req, res) => {
-  res.render('movies/newMovie');
+router.get('/', (req, res) => {
+  res.render('movies/newMovie.ejs');
 });
 
       
